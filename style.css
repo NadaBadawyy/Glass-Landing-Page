@@ -1,0 +1,110 @@
+*{
+    padding: 0;
+    margin:0;
+    font-family: sans-serif; 
+    color: white;
+}
+body{
+    background-image: linear-gradient(#111,#222);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+body::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: red;
+    z-index: -1;
+    clip-path: circle(40% at right 70%);
+}
+.container{
+    width: 80%;
+    height: 80%;
+    background-color: rgba(255,255,255,0.15);
+    border-radius: 30px;
+}
+a{
+    text-decoration: none;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    padding: 30px 0;
+}
+nav .title{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: 2px;
+}
+nav h1:hover{
+    cursor: pointer;
+    transform: scale(1.5);
+    transition: 0.8s;
+}
+nav ul li {
+    display: inline-block;
+    margin: 0 7px;
+    
+}
+nav ul li a:hover{ 
+    font-size: 20px;
+    color: #f02727;
+   transition: 0.5s;
+}
+.content{ 
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    /* overflow: hidden; */
+}
+.content .text{
+    width: 40%;
+}
+.content .image{
+    width: 40%;
+}
+.image img{
+  width: 350px; 
+}
+.content .text h2{
+    text-transform: uppercase;
+    font-size: 33px;
+    margin: 30px 0;
+    letter-spacing: 3px;
+}
+.container .text p{
+    line-height: 25px;
+    letter-spacing: 1px;
+}
+@media (min-width:800px) and (max-width:1150px){
+    .content .image img{
+        width: 350px; 
+      }
+}
+@media (max-width:800px){
+    .content .image img{
+        width: 300px; 
+      }
+    .content,nav{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .content .image , .content .text{
+        width: 80%;
+    }
+    body::after{
+        clip-path: circle(50% at bottom);
+    }
+}
